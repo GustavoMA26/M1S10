@@ -15,7 +15,7 @@ export const MedicamentosContext = createContext();
 
 export const MedicamentosContextProvider = ({children}) => {
 
-    const [listaMedicamentos, setListaMedicamentos] = useState([])
+    const [listaMedicamentos, setListaMedicamentos] = useState(JSON.parse(localStorage.getItem("listaMedicamentos")) || [])
 
     const AdicionarMedicamento = (nome, laboratorio, preco) => {
         if(nome.length == "" || laboratorio.length == "" || preco == 0) {
@@ -31,7 +31,7 @@ export const MedicamentosContextProvider = ({children}) => {
     }
 
     const novaLista = [...listaMedicamentos, novoMedicamento]
-    console.log(novaLista)
+    localStorage.setItem("listaMedicamentos", JSON.stringify(novaLista))
     //novaLista.push(novoMedicamento)
     setListaMedicamentos(novaLista)
 }
