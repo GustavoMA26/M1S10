@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { MedicamentosContext } from "../Context/MedicamentosContext"
+import { MedicamentosContext } from "../../Context/MedicamentosContext";
 import "./index.css"
 
 function FormularioNovoMedicamento () {
