@@ -1,0 +1,33 @@
+.form {
+    display:flex;
+    flex-direction: column;    
+}
+
+.subtitulo {
+    text-align: center;
+    color:white;
+    margin-bottom: 10px;
+}
+
+.container {
+    padding: 50px;
+    background-color: #40b59a;
+    border-radius: 20px;
+    margin: 40px;
+    padding: 40px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #ff8a25;
+    color:white;
+    border-radius: 30px;
+    border-color: #ff8a25;
+    height:50px;
+    width:200px
+}
+
+button:hover {
+    background-color: blue;
+    border-color: blue;
+}
