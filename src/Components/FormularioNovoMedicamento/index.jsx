@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { MedicamentosContext } from "../Context/MedicamentosContext"
 import "./index.css"
 
 function FormularioNovoMedicamento () {
+
+    const {AdicionarMedicamento} = useContext(MedicamentosContext) 
 
     const [nome, setNome] = useState("");
     const [laboratorio, setLaboratorio] = useState("");
@@ -9,6 +12,7 @@ function FormularioNovoMedicamento () {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        AdicionarMedicamento(nome, laboratorio, preco)
     }
 
 

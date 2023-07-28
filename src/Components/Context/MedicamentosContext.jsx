@@ -17,8 +17,26 @@ export const MedicamentosContextProvider = ({children}) => {
 
     const [listaMedicamentos, setListaMedicamentos] = useState([])
 
+    const AdicionarMedicamento = (nome, laboratorio, preco) => {
+        if(nome.length == "" || laboratorio.length == "" || preco == 0) {
+            alert("As informações não foram completamente preenchidas!")
+            return
+       }
+        const NovoMedicamento = {
+        id: listaMedicamentos.length +1,
+        nome: nome,
+        laboratorio: laboratorio,
+        preco: preco,
+        favorite: false 
+    }
+
+    const novaListaMedicamentos = [...listaMedicamentos]
+    console.log(novaListaMedicamentos)
+    novaListaMedicamentos.push(NovoMedicamento)
+    alert('Medicamento cadastrado com sucesso!')
+}
     return (
-        <MedicamentosContext.Provider value={{listaMedicamentos, setListaMedicamentos}}>
+        <MedicamentosContext.Provider value={{listaMedicamentos, AdicionarMedicamento}}>
             {children}
         </MedicamentosContext.Provider>
     )
