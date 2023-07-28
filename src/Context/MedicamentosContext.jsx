@@ -34,11 +34,35 @@ export const MedicamentosContextProvider = ({children}) => {
     console.log(novaLista)
     //novaLista.push(novoMedicamento)
     setListaMedicamentos(novaLista)
-    alert('Medicamento cadastrado com sucesso!')
 }
 
     const FavoritarMedicamento = (id) => {
+        const lista = listaMedicamentos.map(item => {
+            if (item.id == id){
+                item.favorito = !item.favorito
+            }
+            return item
+        })
+        setListaMedicamentos(lista)
+        
+        //Solução 2
+        // //Busca medicamento a ser customizado
+        // const medicamento = listaMedicamentos.filter(item => item.id == id )
+        // //Verificamos se o medicamento foi encontrado
+        // if (medicamento.length == 0){
+        //     return
+        // }
+        // // Marcamos o medicamento como o contrário do status atual
+        // medicamento.favorito = ! medicamento.favorito
+        
+        // //Pegamos uma lista filtrada sem o medicamento a ser editado
+        // const listaFiltrada = listaMedicamentos.filter(item => item.id != id)
 
+        // //Junta-se o medicamento selecionado na lista geral
+        // const novaLista = [...listaFiltrada, medicamento]
+        
+        // //Atualiza-se a lista
+        // setListaMedicamentos(novaLista)
     }
 
     return (
